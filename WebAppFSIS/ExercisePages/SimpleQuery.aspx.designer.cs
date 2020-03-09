@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebAppFSIS.Exercise_Pages
+namespace WebAppFSIS.ExercisePages
 {
 
 

@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 #region Additional Namespaces
 using FSISSystem.BLL;
-using FSISSystem.ENTITIES;
+using FSISSystem.Entities;
 
 #endregion
 
@@ -26,28 +26,28 @@ namespace WebAppFSIS.ExercisePages
         {
             if (string.IsNullOrEmpty(TeamIDArg.Text))
             {
-                MessageLabel.Text = "Enter a region id value.";
+                MessageLabel.Text = "Enter a team id";
             }
             else
             {
-                int regionid = 0;
-                if (int.TryParse(TeamIDArg.Text, out regionid))
+                int teamid = 0;
+                if (int.TryParse(TeamIDArg.Text, out teamid))
                 {
-                    if (regionid > 0)
+                    if (teamid > 0)
                     {
-                        RegionController sysmgr = new RegionController();
-                        Region info = null;
-                        info = sysmgr.Regions_FindByID(regionid); //BLL controller method
+                        TeamController sysmgr = new TeamController();
+                        Team info = null;
+                        info = sysmgr.Teams_FindByID(teamid); //BLL controller method
                         if (info == null)
                         {
-                            MessageLabel.Text = "Region ID not found.";
-                            RegionID.Text = "";
-                            RegionDescription.Text = "";
+                            MessageLabel.Text = "Team ID not found.";
+                            TeamID.Text = "";
+                            TeamName.Text = "";
                         }
                         else
                         {
-                            RegionID.Text = info.RegionID.ToString();
-                            RegionDescription.Text = info.RegionDescription;
+                            TeamID.Text = info.TeamID.ToString();
+                            TeamName.Text = info.TeamName;
                         }
                     }
                     else

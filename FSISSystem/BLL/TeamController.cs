@@ -4,17 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FSISSystem.DAL;
-using FSISSystem.ENTITIES;
+using FSISSystem.Entities;
 
-namespace NWSystem.BLL
+namespace FSISSystem.BLL
 {
-    public class RegionController
+    public class TeamController
     {
-        public Region Regions_FindByID(int regionid)
+        public Team Teams_FindByID(int teamid)
         {
-            using (var context = new NWContext())
+            using (var context = new FSISContext())
             {
-                return context.Regions.Find(regionid);
+                return context.Teams.Find(teamid);
             }
         }
     }
